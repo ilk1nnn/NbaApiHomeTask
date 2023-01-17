@@ -1,5 +1,4 @@
-﻿using MongoDB.Bson.IO;
-using NbaApi.ApiEntities;
+﻿using NbaApi.ApiEntities;
 using NbaApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -62,6 +61,14 @@ namespace NbaApi.Services.NBAApiService
                 return result;
             }
         }
+
+
+        public async Task<List<Player>> GetPlayersAsync()
+        {
+            var result = JsonHelper<Player>.Deserialize("../../Data/players.json");
+            return result;
+        }
+
         public async Task<List<ApiEntities.Teams.Response>> GetTeamsAsync()
         {
             if (ApiKeys.Key != String.Empty)

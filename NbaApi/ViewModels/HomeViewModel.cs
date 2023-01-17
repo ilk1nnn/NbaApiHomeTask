@@ -1,8 +1,10 @@
-﻿using NbaApi.ApiEntities.Teams;
+﻿using NbaApi.ApiEntities;
+using NbaApi.ApiEntities.Teams;
 using NbaApi.Commands;
 using NbaApi.Models;
 using NbaApi.Services;
 using NbaApi.Services.NBAApiService;
+using NbaApi.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using Response = NbaApi.ApiEntities.Teams.Response;
 
 namespace NbaApi.ViewModels
 {
@@ -49,8 +52,21 @@ namespace NbaApi.ViewModels
             }
         }
 
+
+
+
+        private Response selectedTeam;
+
+        public Response SelectedTeam
+        {
+            get { return selectedTeam; }
+            set { selectedTeam = value; OnPropertyChanged(); }
+        }
+
+
+
+
         List<Response> result = null;
-        List<Player> playersResult = null;
         public HomeViewModel()
         {
             LoadData();
@@ -62,6 +78,7 @@ namespace NbaApi.ViewModels
             {
                 No = 1
             };
+            SelectedTeam = new Response();
 
             var service = new NbaApiService();
 
@@ -69,6 +86,12 @@ namespace NbaApi.ViewModels
 
             SelectedTeamCommand = new RelayCommand((s) =>
             {
+                var window = new PlayersOfTeamWindow();
+                window.DataContext = new PlayersOfTeamViewModel(SelectedTeam);
+                window.Show();
+
+
+
 
             });
 

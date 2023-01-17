@@ -8,7 +8,7 @@
         Title="PlayersOfTeamWindow" Height="450" Width="800">
     <Grid Background="Black">
         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                                          ItemsSource="{Binding AllCars,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                          ItemsSource="{Binding AllPlayers,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                       Background="Transparent"
                               HorizontalContentAlignment="Left" 
                               Height="500" 
@@ -34,77 +34,28 @@
                                     >
 
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock FontSize="11"
+                                    <TextBlock FontSize="50"
                                                        Margin="10,10,0,0"
                                                        FontWeight="Bold"
                                                        Foreground="Black"
-                                                       Text="{Binding PlayerName}"
+                                                       Text="{Binding id}"
                                                        ></TextBlock>
 
 
-                                    <TextBlock FontSize="11"
+                                    <TextBlock FontSize="50"
                                                        Margin="10,10,0,0"
                                                        FontWeight="Bold"
                                                        Foreground="Black"
-                                                       Text="{Binding Brand}"
+                                                       Text="{Binding firstname}"
                                                        ></TextBlock>
 
-                                    <TextBlock FontSize="11"
+                                    <TextBlock FontSize="50"
                                                        Margin="10,10,0,0"
                                                        FontWeight="Bold"
                                                        Foreground="Black"
-                                                       Text="{Binding Year}"
+                                                       Text="{Binding lastname}"
                                                        ></TextBlock>
 
-                                    <TextBlock FontSize="11"
-                                                       Margin="10,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black"
-                                                       Text="{Binding Mileage}"
-                                                       ></TextBlock>
-
-                                    <TextBlock FontSize="11"
-                                                       Margin="10,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black"
-                                                       Text="{Binding Color}"
-                                                       ></TextBlock>
-
-                                    <TextBlock FontSize="11"
-                                                       Margin="10,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black"
-                                                       Text="{Binding Type}"
-                                                       ></TextBlock>
-
-                                    <TextBlock FontSize="11"
-                                                       Margin="10,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black"
-                                                       Text="{Binding FuelType}"
-                                                       ></TextBlock>
-
-                                    <TextBlock FontSize="11"
-                                                       Margin="10,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black"
-                                                       Text="{Binding IsNew}"
-                                                       ></TextBlock>
-
-                                    <StackPanel Orientation="Horizontal">
-
-                                        <TextBlock FontSize="11"
-                                                       Margin="10,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black"
-                                                       Text="{Binding Price}"
-                                                       ></TextBlock>
-                                        <TextBlock
-                                                     FontSize="11"
-                                                       Margin="2,10,0,0"
-                                                       FontWeight="Bold"
-                                                       Foreground="Black">$</TextBlock>
-                                    </StackPanel>
 
                                 </StackPanel>
 
